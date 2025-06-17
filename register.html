@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register - ECOCycle</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: url("../pitcure/background_app.jpg") center/cover fixed;
+      color: #2e2e2e;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 32px;
+      background-color: rgba(0, 77, 64, 0.9);
+      border-bottom: 2px solid #05fbd2;
+    }
+
+    .navbar img.logo {
+      height: 48px;
+      width: auto;
+    }
+
+    .nav-links .button-nav {
+      background: transparent;
+      border: none;
+      color: #ffffff;
+      font-weight: 600;
+      padding: 8px 12px;
+      margin-left: 16px;
+      position: relative;
+      font-size: 14px;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links .button-nav::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: #05fbd2;
+      left: 50%;
+      bottom: 4px;
+      transition: width 0.3s ease, left 0.3s ease;
+    }
+
+    .nav-links .button-nav:hover {
+      color: #05fbd2;
+    }
+
+    .nav-links .button-nav:hover::after {
+      width: 100%;
+      left: 0;
+    }
+
+    .form-container {
+      max-width: 600px;
+      margin: 50px auto;
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 32px;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .form-container h2 {
+      text-align: center;
+      color: #004d40;
+      margin-bottom: 24px;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+    .error {
+      color: red;
+      font-size: 13px;
+      margin-top: 4px;
+    }
+
+    .success-message {
+      text-align: center;
+      color: green;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    button[type="submit"] {
+      display: block;
+      margin: 0 auto;
+      padding: 12px 32px;
+      background-color: #05fbd2;
+      color: #004d40;
+      font-weight: bold;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #00d8c0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ✅ EXACT HEADER COPY -->
+  <div class="navbar">
+    <img class="logo" src="pitcure/logo.jpg">
+    <nav class="nav-links">
+      <button class="button-nav" onclick="window.location.href='home.html'">HOME</button>
+      <button class="button-nav" onclick="window.location.href='aboutUS.html'">ABOUT US</button>
+      <button class="button-nav" onclick="window.location.href='exchange.html'">EXCHANGE</button>
+      <button class="button-nav" onclick="window.location.href='panduan.html'">PANDUAN</button>
+      <button class="button-nav" onclick="window.location.href='register.html'">REGISTER</button>
+    </nav>
+  </div>
+
+  <div class="form-container">
+    <h2>FORM PENDAFTARAN</h2>
+    <form id="registerForm">
+      <div class="form-group">
+        <label for="nama">Nama:</label>
+        <input type="text" id="nama" placeholder="Masukkan Nama">
+        <div class="error" id="namaError"></div>
+      </div>
+      <div class="form-group">
+        <label for="gender">Gender:</label>
+        <input type="text" id="gender" placeholder="Masukkan Gender">
+        <div class="error" id="genderError"></div>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="Masukkan Email">
+        <div class="error" id="emailError"></div>
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" placeholder="Masukkan Password">
+        <div class="error" id="passwordError"></div>
+      </div>
+      <div class="form-group">
+        <label for="confirmPassword">Konfirmasi Password:</label>
+        <input type="password" id="confirmPassword" placeholder="Masukkan Password Lagi">
+        <div class="error" id="confirmPasswordError"></div>
+      </div>
+      <button type="submit">SUBMIT</button>
+    </form>
+    <div class="success-message" id="successMessage"></div>
+  </div>
+
+  <script>
+    const form = document.getElementById('registerForm');
+    const successMessage = document.getElementById('successMessage');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const nama = document.getElementById('nama').value.trim();
+      const gender = document.getElementById('gender').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value;
+      const confirmPassword = document.getElementById('confirmPassword').value;
+
+      document.getElementById('namaError').textContent = '';
+      document.getElementById('genderError').textContent = '';
+      document.getElementById('emailError').textContent = '';
+      document.getElementById('passwordError').textContent = '';
+      document.getElementById('confirmPasswordError').textContent = '';
+      successMessage.textContent = '';
+
+      let isValid = true;
+
+      if (nama === '') {
+        document.getElementById('namaError').textContent = 'Nama tidak boleh kosong';
+        isValid = false;
+      }
+
+      if (gender === '') {
+        document.getElementById('genderError').textContent = 'Gender harus diisi';
+        isValid = false;
+      }
+
+      if (!email.includes('@') || !email.includes('.')) {
+        document.getElementById('emailError').textContent = 'Email tidak valid';
+        isValid = false;
+      }
+
+      if (password.length < 6) {
+        document.getElementById('passwordError').textContent = 'Password minimal 6 karakter';
+        isValid = false;
+      }
+
+      if (confirmPassword !== password) {
+        document.getElementById('confirmPasswordError').textContent = 'Password tidak cocok';
+        isValid = false;
+      }
+
+      if (isValid) {
+        successMessage.textContent = 'Pendaftaran berhasil! Selamat datang di ECOCycle 🌱';
+        form.reset();
+      }
+    });
+  </script>
+
+</body>
+</html>

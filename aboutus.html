@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About V-Phone</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      
+      background: url('../pitcure/background_app.jpg')center/cover fixed;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 32px;
+      background-color: rgba(0, 77, 64, 0.9);
+      border-bottom: 2px solid #05fbd2;
+    }
+
+    .navbar img.logo {
+      height: 48px;
+      width: auto;
+    }
+
+    .nav-links .button-nav {
+      background: transparent;
+      border: none;
+      color: #ffffff;
+      font-weight: 600;
+      padding: 8px 12px;
+      margin-left: 16px;
+      position: relative;
+      cursor: pointer;
+      font-size: 14px;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links .button-nav::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: #05fbd2;
+      left: 50%;
+      bottom: 4px;
+      transition: width 0.3s ease, left 0.3s ease;
+    }
+
+    .nav-links .button-nav:hover {
+      color: #05fbd2;
+    }
+
+    .nav-links .button-nav:hover::after {
+      width: 100%;
+      left: 0;
+    }
+
+    .content-wrapper {
+      padding: 32px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .section {
+      background-color: #ffffff;
+      border-radius: 20px;
+      border: 1px solid #ccc;
+      box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 24px;
+      padding: 24px;
+    }
+
+    .section h2 {
+      margin-bottom: 12px;
+      color: #004d40;
+    }
+
+    .section p,
+    .section ol {
+      margin-left: 16px;
+    }
+
+    .image-info {
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    .image-info img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+    }
+
+    .kontak-ecocycle {
+      background-color: #e0f2f1;
+      padding: 20px;
+      border-radius: 12px;
+      margin-top: 20px;
+    }
+
+    .kontak-ecocycle ul {
+      list-style: none;
+      margin-top: 10px;
+    }
+
+    .kontak-ecocycle li {
+      margin-bottom: 8px;
+    }
+
+    .social-icons {
+      margin-top: 12px;
+    }
+
+    .social-icons a {
+      text-decoration: none;
+      margin-right: 12px;
+      font-size: 20px;
+    }
+
+    .penutup {
+      margin-top: 20px;
+      font-style: italic;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="navbar">
+    <img class="logo" src="../pitcure/logo.jpg" alt="Logo V-Phone">
+    <nav class="nav-links">
+      <button class="button-nav" onclick="window.location.href='home.html'">HOME</button>
+      <button class="button-nav" onclick="window.location.href='aboutUS.html'">ABOUT US</button>
+      <button class="button-nav" onclick="window.location.href='exchange.html'">EXCHANGE</button>
+      <button class="button-nav" onclick="window.location.href='panduan.html'">PANDUAN</button>
+      <button class="button-nav" onclick="window.location.href='register.html'">REGISTER</button>
+    </nav>
+  </header>
+
+  <main class="content-wrapper">
+    <section class="section">
+      <div class="image-info"><img src="../pitcure/sampah.jpg" alt="Tumpukan Sampah"></div>
+      <h2>Latar Belakang</h2>
+      <p>
+        Masalah sampah yang terus meningkat menjadi ancaman serius bagi lingkungan. Kurangnya kesadaran masyarakat dan keterbatasan akses informasi membuat sampah yang bisa didaur ulang justru mencemari alam.
+        EcoCycle hadir untuk menjawab tantangan ini melalui pendekatan edukatif dan penghargaan berbasis teknologi.
+      </p>
+    </section>
+
+    <section class="section">
+      <div class="image-info"><img src="../pitcure/memberishkan.jpg" alt="Membersihkan Sampah"></div>
+      <h2>Tujuan</h2>
+      <ol>
+        <li>Meningkatkan kesadaran dan edukasi tentang pentingnya daur ulang.</li>
+        <li>Memberikan insentif bagi masyarakat yang aktif mengelola sampah.</li>
+        <li>Menghubungkan pengguna dengan lokasi dan komunitas daur ulang.</li>
+        <li>Mendorong gaya hidup ramah lingkungan secara berkelanjutan.</li>
+        <li>Mengurangi jumlah sampah yang tidak terkelola dengan baik.</li>
+      </ol>
+    </section>
+
+    <section class="section">
+      <div class="image-info"><img src="../pitcure/3r2.png" alt="Mendaur Ulang"></div>
+      <h2>Pendekatan</h2>
+      <p>
+        Di EcoCycle, kami percaya bahwa menjaga lingkungan adalah tanggung jawab bersama yang bisa dimulai dari langkah kecil:
+        mendaur ulang. EcoCycle hadir sebagai sebuah platform yang bertujuan untuk meningkatkan kesadaran dan motivasi masyarakat dalam menjaga kebersihan lingkungan melalui pengelolaan sampah yang lebih bijak dan bertanggung jawab.
+      </p>
+    </section>
+
+    <div class="kontak-ecocycle">
+      <strong>Kontak Kami</strong>
+      <ul>
+        <li>Telepon: (021) 1234-5678</li>
+        <li>Email: support@EcoCycle.com</li>
+        <li>Instagram: @EcoCycle</li>
+      </ul>
+      <div class="social-icons">
+        <a href="#">📞</a>
+        <a href="#">✉️</a>
+        <a href="#">📸</a>
+      </div>
+    </div>
+
+    <div class="penutup">
+      Kami selalu siap membantu Anda dalam segala kebutuhan terkait produk dan layanan kami. Jangan ragu untuk menghubungi kami!
+    </div>
+  </main>
+
+  <script src="about-script.js"></script>
+</body>
+</html>
