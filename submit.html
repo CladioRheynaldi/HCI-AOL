@@ -1,0 +1,169 @@
+  <!DOCTYPE html>
+  <html lang="id">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECOCycle - Event & Poin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+
+
+* {
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background: url('pitcure/backgrounds-fresh-nature-spring-plant-1.jpg') center/cover fixed;
+  color: #2e2e2e;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
+  background-color: rgba(0, 77, 64, 0.9);
+  border-bottom: 2px solid #05fbd2;
+}
+.navbar img.logo {
+  height: 48px;
+  width: auto;
+}
+.nav-links .button-nav {
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 8px 12px;
+  margin-left: 16px;
+  position: relative;
+  transition: color 0.2s ease;
+}
+.nav-links .button-nav::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: #05fbd2;
+  left: 50%;
+  bottom: 4px;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+.nav-links .button-nav:hover {
+  color: #05fbd2;
+}
+.nav-links .button-nav:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.form-container {
+  max-width: 500px;
+  margin: 50px auto;
+  background-color: rgba(0, 255, 255, 0.3); 
+  padding: 24px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container label {
+  margin-top: 16px;
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+.form-container input,
+.form-container select,
+.form-container textarea {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  font-size: 14px;
+}
+
+.form-container textarea {
+  resize: vertical;
+}
+
+.form-container button {
+  margin-top: 20px;
+  padding: 12px;
+  border: none;
+  background-color: #004d40;
+  color: white;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.form-container button:hover {
+  background-color: #00796b;
+}
+
+label{
+color:#ffffff;
+}
+
+ </style>
+  </head>
+  <body>
+ <header class="navbar">
+    <img class="logo" src="pitcure/logo.jpg" alt="Logo V-Phone">
+    <nav class="nav-links">
+      <button class="button-nav" onclick="window.location.href='home.html'">HOME</button>
+      <button class="button-nav" onclick="window.location.href='aboutUS.html'">ABOUT US</button>
+      <button class="button-nav" onclick="window.location.href='exchange.html'">EXCHANGE</button>
+      <button class="button-nav" onclick="window.location.href='panduan.html'">PANDUAN</button>
+      <button class="button-nav" onclick="window.location.href='register.html'">REGISTER</button>
+    </nav>
+  </header>
+        <div class="form-container">
+<form id="sampahForm">
+  <label for="jenis">Jenis Sampah:</label>
+  <input type="text" id="jenis" name="jenis" placeholder="Masukan Jenis Sampah" required>
+
+  <label for="jumlah">Jumlah Sampah (per 100 gram):</label>
+  <input type="number" id="jumlah" name="jumlah" placeholder="Masukan Jumlah Sampah" required>
+
+  <label for="kondisi">Kondisi Sampah:</label>
+  <select id="kondisi" name="kondisi" required>
+    <option value="">-- Pilih Kondisi --</option>
+    <option value="kering">Kering</option>
+    <option value="basah">Basah</option>
+    <option value="tercampur">Tercampur</option>
+  </select>
+
+  <label for="catatan">Catatan Tambahan:</label>
+  <textarea id="catatan" name="catatan"></textarea>
+
+  <button type="button" onclick="handlePilihTPS()">Pilih TPS</button>
+</form>
+
+<script>
+  function handlePilihTPS() {
+    const form = document.getElementById('sampahForm');
+    if (form.checkValidity()) {
+      window.location.href = 'TPS.html';
+    } else {
+      form.reportValidity();
+    }
+  }
+</script>
+
+
+  </body>
+  </html>

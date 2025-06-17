@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TPS Tanjung</title>
+  <style>
+    * {
+      box-sizing: content-box;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+  body {
+      background: url("pitcure/background_app.jpg") center/cover fixed;
+      color: #2e2e2e;
+    }
+    .card {
+      width: 300px;
+      margin: 30px auto;
+      padding: 16px;
+      background: #d4f0ff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    .card h3 {
+      font-size: 16px;
+      color: #222;
+      margin-bottom: 8px;
+    }
+
+    .TPS-info{
+        
+        width:fit-content;
+        height:fit-content;
+         padding: 20px 20px;
+    }
+
+    .TPS-info iframe {
+      width: 100%;
+      border: 2px solid #2e2e2e;
+      border-radius: 6px;
+    }
+
+    .timer {
+      margin-top: 12px;
+      padding: 10px;
+      background: #e0e0e0;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .info {
+      margin-top: 10px;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .done-btn {
+      margin-top: 12px;
+      padding: 8px;
+      width: 100%;
+      background-color: limegreen;
+      color: white;
+      border: none;
+      font-weight: bold;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .done-btn:hover{
+        background-color:white;
+      color: limegreen;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h3>TPS Tanjung</h3>
+
+      <section class="TPS-info">
+    <a href="https://www.google.com/maps/place/Tempat+Pengolahan+Sampah+Terpadu+(TPST)+Tanjung/@-3.2713537,96.3015462,5z/data=!4m6!3m5!1s0x2e655dd3e55c9cad:0xa97a592451a0e69e!8m2!3d-7.4438254!4d109.2303353!16s%2Fg%2F11g6qxjp9w?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.193603408084!2d109.2277603736582!3d-7.443820073346757!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e655dd3e55c9cad%3A0xa97a592451a0e69e!2sTempat%20Pengolahan%20Sampah%20Terpadu%20(TPST)%20Tanjung!5e0!3m2!1sid!2sid!4v1748226799405!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</a>
+
+
+
+
+    <div class="timer" id="countdown">WAKTU TERSISA : 24:00:00</div>
+
+    <div class="info">
+      Kumpulkan sampah untuk mendapatkan poin<br>
+      <strong>JANGAN SAMPAI MELEWATI BATAS WAKTU</strong>
+    </div>
+
+    <button class="done-btn">DONE</button>
+  </section>
+
+  <script>
+    
+    let totalSeconds = 24 * 60 * 60;
+
+    function updateCountdown() {
+      let hours = Math.floor(totalSeconds / 3600);
+      let minutes = Math.floor((totalSeconds % 3600) / 60);
+      let seconds = totalSeconds % 60;
+
+      // Format 2 digit
+      let timeStr = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+      document.getElementById("countdown").innerText = `WAKTU TERSISA : ${timeStr}`;
+
+      if (totalSeconds > 0) {
+        totalSeconds--;
+      } else {
+        clearInterval(timer);
+        document.getElementById("countdown").innerText = "WAKTU HABIS!";
+      }
+    }
+
+ 
+    let timer = setInterval(updateCountdown, 1000);
+  </script>
+
+</body>
+</html>
